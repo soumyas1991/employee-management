@@ -11,42 +11,43 @@
             </span>
             
         </div>
-
-        <table class="table table-striped table-bordered table-responsive">
-            <thead>
-                <tr>
-                    <th [appSort]="employees" data-order="desc" data-name="name" scope="col" style="cursor: pointer;">Name</th>
-                    <th>Contact No</th>
-                    <th>Email</th>
-                    <th>Department</th>
-                    <th [appSort]="employees" data-order="desc" data-name="joindate" scope="col" style="cursor: pointer;">Joining Date</th>
-                    <th [appSort]="employees" data-order="desc" data-name="enddate" scope="col" style="cursor: pointer;">End Date</th>
-                    <th>Experience(Year)</th>
-                    <th>Status</th>
-                    <th>Actions</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr *ngFor="let employee of employees | paginate: {itemsPerPage: 5,currentPage: pageNo} | search: query">
-                    <td>{{employee.name}}</td>
-                    <td>{{employee.phnno}}</td>
-                    <td>{{employee.email}}</td>
-                    <td>{{employee.department}}</td>
-                    <td>{{employee.joindate  | date: 'yyyy/MM/dd'}}</td> 
-                    <td>{{employee.enddate  | date: 'yyyy/MM/dd'}}</td>
-                    <td>{{employee.experience}}</td>
-                    <td><span *ngIf="employee.joindate <= currentDate && employee.enddate == null "><button (click)="updateEnddate(employee._id)" class="btn btn-danger" title="Click here to inactive">Active</button></span>
-                        <span *ngIf=" employee.enddate !== null "  style="color:red;">Inactive</span>
-                        <span *ngIf="employee.joindate > currentDate && employee.enddate == null" style="color:orange;">Pending</span>
-                        
-                    </td>
-                    <td><a (click)="deleteEmployee(employee._id)" style="cursor: pointer; color:red;"><i class="fa fa-trash"></i></a> &nbsp;&nbsp;&nbsp;
-                        <a *ngIf=" employee.enddate == null " (click)="editEmployee(employee._id)" style="cursor: pointer; color:blue;"><i class="fa fa-pencil"></i></a>
-                    </td>
-                </tr>
-            </tbody>
-           
-        </table>
+        <div class="table-responsive">
+            <table class="table table-striped table-bordered table-responsive">
+                <thead>
+                    <tr>
+                        <th [appSort]="employees" data-order="desc" data-name="name" scope="col" style="cursor: pointer;">Name</th>
+                        <th>Contact No</th>
+                        <th>Email</th>
+                        <th>Department</th>
+                        <th [appSort]="employees" data-order="desc" data-name="joindate" scope="col" style="cursor: pointer;">Joining Date</th>
+                        <th [appSort]="employees" data-order="desc" data-name="enddate" scope="col" style="cursor: pointer;">End Date</th>
+                        <th>Experience(Year)</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let employee of employees | paginate: {itemsPerPage: 5,currentPage: pageNo} | search: query">
+                        <td>{{employee.name}}</td>
+                        <td>{{employee.phnno}}</td>
+                        <td>{{employee.email}}</td>
+                        <td>{{employee.department}}</td>
+                        <td>{{employee.joindate  | date: 'yyyy/MM/dd'}}</td> 
+                        <td>{{employee.enddate  | date: 'yyyy/MM/dd'}}</td>
+                        <td>{{employee.experience}}</td>
+                        <td><span *ngIf="employee.joindate <= currentDate && employee.enddate == null "><button (click)="updateEnddate(employee._id)" class="btn btn-danger" title="Click here to inactive">Active</button></span>
+                            <span *ngIf=" employee.enddate !== null "  style="color:red;">Inactive</span>
+                            <span *ngIf="employee.joindate > currentDate && employee.enddate == null" style="color:orange;">Pending</span>
+                            
+                        </td>
+                        <td><a (click)="deleteEmployee(employee._id)" style="cursor: pointer; color:red;"><i class="fa fa-trash"></i></a> &nbsp;&nbsp;&nbsp;
+                            <a *ngIf=" employee.enddate == null " (click)="editEmployee(employee._id)" style="cursor: pointer; color:blue;"><i class="fa fa-pencil"></i></a>
+                        </td>
+                    </tr>
+                </tbody>
+            
+            </table>
+        </div>
         <pagination-controls (pageChange)="pageNo = $event"></pagination-controls>
     </div>
 </div>
