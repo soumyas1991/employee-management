@@ -1,0 +1,48 @@
+# See http://help.github.com/ignore-files/ for more about ignoring files.
+
+# compiled output
+/EmployeeManagement/dist
+/EmployeeManagement/tmp
+/EmployeeManagement/out-tsc
+# Only exists if Bazel was run
+/EmployeeManagement/bazel-out
+
+# dependencies
+/EmployeeManagement/node_modules
+/NodeJS/node_modules
+
+/EmployeeManagement/package-lock.json
+/NodeJS/package-lock.json
+# profiling files
+chrome-profiler-events*.json
+
+# IDEs and editors
+.idea
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+# IDE - VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.history/*
+
+# misc
+/EmployeeManagement/.sass-cache
+/EmployeeManagement/connect.lock
+/EmployeeManagement/coverage
+/EmployeeManagement/libpeerconnection.log
+/EmployeeManagement/npm-debug.log
+/EmployeeManagement/yarn-error.log
+/EmployeeManagement/testem.log
+/EmployeeManagement/typings
+
+# System Files
+.DS_Store
+Thumbs.db
