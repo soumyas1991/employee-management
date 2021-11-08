@@ -93,10 +93,12 @@ export class ListComponent implements OnInit {
   }
 
   calcExperience(days:any) {
+
+    console.log(days)
     //console.log(dayDiff/365 | 0)
     var yr =days/365 | 0;
-    var month = days/12 | 0;
-    var day = days%12 | 0;
+    var month = days/30 | 0;
+    var day = days%30 | 0;
     var message = yr+ ' year '+month+' months '+ day+' days';
    return message
     }
