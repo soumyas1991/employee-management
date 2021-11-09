@@ -44,7 +44,7 @@
                 <div *ngIf="f.email.errors?.required"><span style="color: rgb(235, 67, 67);">Email is required.</span>
                 </div>
     
-                <div *ngIf="f.email.errors?.email"><span style="color: rgb(235, 67, 67);">Please, enter valid email address.</span>
+                <div *ngIf="f.email.errors?.pattern"><span style="color: rgb(235, 67, 67);">Please, enter valid email address.</span>
                 </div>
     
             </div>
