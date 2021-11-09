@@ -97,8 +97,10 @@ export class ListComponent implements OnInit {
     console.log(days)
     //console.log(dayDiff/365 | 0)
     var yr =days/365 | 0;
-    var month = days/30 | 0;
-    var day = days%30 | 0;
+    var dayBal = days%365 | 0;
+    var month = dayBal/30 | 0;
+        dayBal = dayBal%30;
+    var day = dayBal;
     var message = yr+ ' year '+month+' months '+ day+' days';
    return message
     }
